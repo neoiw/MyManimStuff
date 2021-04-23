@@ -1,0 +1,2 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/UpdaterValueTracker/450974505_1027818317_936346610.mp4'

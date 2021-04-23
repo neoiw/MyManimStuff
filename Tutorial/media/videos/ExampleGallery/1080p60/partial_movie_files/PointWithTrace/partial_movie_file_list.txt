@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointWithTrace/450974505_3711013600_3373141431.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointWithTrace/2788726626_1438405273_4118471985.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointWithTrace/2788726626_1682184778_4164648657.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointWithTrace/2788726626_1460705807_1289764445.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointWithTrace/2788726626_1438405273_171560929.mp4'

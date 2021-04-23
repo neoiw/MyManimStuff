@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/MoveBrace/450974505_3163036473_269600895.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/MoveBrace/2788726626_422212223_3604536058.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/MoveBrace/2788726626_1438405273_3970355787.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/MoveBrace/2788726626_4146925652_3604536058.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/MoveBrace/2788726626_1438405273_2886373982.mp4'

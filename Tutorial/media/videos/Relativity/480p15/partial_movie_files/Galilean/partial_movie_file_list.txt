@@ -1,0 +1,2 @@
+# This file is used internally by FFMPEG.
+file 'file:D:/ETC/ManimCE/Tutorial/media/videos/Relativity/480p15/partial_movie_files/Galilean/3435788854_1_3053591690.mp4'

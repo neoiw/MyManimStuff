@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Errorcheck/1080p60/partial_movie_files/MovingAngle/450974505_1438405273_1979224853.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Errorcheck/1080p60/partial_movie_files/MovingAngle/2788726626_981259619_698878131.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Errorcheck/1080p60/partial_movie_files/MovingAngle/2788726626_1221537651_105294281.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Errorcheck/1080p60/partial_movie_files/MovingAngle/2788726626_658529886_158752592.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Errorcheck/1080p60/partial_movie_files/MovingAngle/2788726626_1549706946_676697497.mp4'

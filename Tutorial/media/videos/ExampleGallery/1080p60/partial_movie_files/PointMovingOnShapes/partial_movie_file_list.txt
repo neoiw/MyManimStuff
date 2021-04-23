@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointMovingOnShapes/1909262289_2076115974_1693725846.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointMovingOnShapes/1377668583_20519821_3628769721.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointMovingOnShapes/1377668583_176455162_1708379886.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointMovingOnShapes/1377668583_1639071726_3628769721.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/ExampleGallery/1080p60/partial_movie_files/PointMovingOnShapes/1377668583_2959719147_1946899286.mp4'

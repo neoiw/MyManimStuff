@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Graphings/1080p60/partial_movie_files/Plot1/450974505_3100078565_2693800288.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Graphings/1080p60/partial_movie_files/Plot1/2788726626_1621920683_4243237982.mp4'
+file 'file:/home/neo/Desktop/School/Manim/Tutorial/media/videos/Graphings/1080p60/partial_movie_files/Plot1/2788726626_1438405273_2244655403.mp4'
