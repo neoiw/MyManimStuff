@@ -170,3 +170,36 @@ class CosPlusOneIntersection(GraphScene):
         self.play(y_value.animate.set_value(1),rate_func=rate_functions.ease_in_out_quint,run_time=3)
         self.wait()
 
+class SinArea(GraphScene):
+    def __init__(self,**kwargs):
+        GraphScene.__init__(
+            self,
+            x_min=-1*PI,
+            x_max=5*PI,
+            y_min=-1,
+            y_max=3,
+            graph_origin=4*LEFT+2*DOWN,
+            **kwargs
+        )
+    def construct(self):
+        #Basic Setup
+        self.setup_axes(animate=True)
+        x_end = ValueTracker(2*PI)
+        sin = self.get_graph(lambda x : np.sin(x)+1,x_min=0)
+        line1 = self.get_vertical_line_to_graph(1/4*PI,sin,DashedLine,color=YELLOW)
+        line2 = self.get_vertical_line_to_graph(x_end.get_value(),sin,DashedLine,color=YELLOW)
+        area1 = self.get_area(sin,1/4*PI,2*PI,dx_scaling=0.5,area_color=BLUE)
+
+        #Updaters
+        line2.add_updater(lambda x : x.become(
+            self.get_vertical_line_to_graph(x_end.get_value(),sin,DashedLine,color=YELLOW)
+        ))
+        area1.add_updater(lambda x : x.become(
+            self.get_area(sin,1/4*PI,x_end.get_value(),dx_scaling=0.5,area_color=BLUE)
+        ))
+
+        #Animations
+        self.play(Create(sin))
+        self.play(Create(line1),Create(line2))
+        self.play(Write(area1))
+        self.play(x_end.animate.increment_value(PI),run_time=3)
