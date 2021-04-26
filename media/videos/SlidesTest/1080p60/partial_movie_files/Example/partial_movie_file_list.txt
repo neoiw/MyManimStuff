@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/media/videos/SlidesTest/1080p60/partial_movie_files/Example/450974505_3492167877_2166804963.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/SlidesTest/1080p60/partial_movie_files/Example/2788726626_291667631_3144554360.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/SlidesTest/1080p60/partial_movie_files/Example/2788726626_1915678255_429927831.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/SlidesTest/1080p60/partial_movie_files/Example/2788726626_1438405273_1961905343.mp4'

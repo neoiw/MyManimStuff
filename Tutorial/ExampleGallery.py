@@ -1,4 +1,5 @@
 from manim import *
+from manim.opengl import *
 
 class BraceAnnotation(Scene):
     def construct(self):
@@ -256,3 +257,28 @@ class BongoCat(Scene):
     def construct(self):
         cat = SVGMobject("bongocat_transparent")
         self.add(cat)
+
+class TwoLineCircleOpenGL(Scene):
+    def construct(self):
+        theta = ValueTracker(0)
+        line1 = OpenGLLine(ORIGIN,RIGHT*3,color=RED)
+        line2 = OpenGLLine(ORIGIN,RIGHT*3,color=GREEN)
+        line3 = OpenGLLine(line1.get_end(),line2.get_end())
+        line_ref = line2.copy()
+
+        line2.add_updater(lambda x : x.become(line_ref.copy().rotate(
+            theta.get_value(),about_point=ORIGIN)
+        ))
+        line3.add_updater(lambda x : x.become(
+            OpenGLLine(line1.get_end(),line2.get_end(),color=BLUE)
+        ))
+
+        arc = OpenGLArc(radius=3,start_angle=line1.get_angle(),angle=theta.get_value(),color=ORANGE)
+
+        arc.add_updater(lambda x : x.become(OpenGLArc(radius=3,start_angle=line1.get_angle(),angle=theta.get_value(),color=ORANGE)))
+
+        self.add(line1,line2,arc,line3)
+        
+
+        self.play(theta.animate.increment_value(PI*2),run_time=5)
+        self.wait()

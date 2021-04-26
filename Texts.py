@@ -22,3 +22,23 @@ class SomeGradients(Scene):
         text1 = Text("Some COOL Gradation",gradient=(YELLOW,RED))
 
         self.add(text1)
+
+class SevenTwoSeven(Scene):
+    def construct(self):
+        funi1 = Text("727",stroke_width=2).set_stroke(color=RED)
+        funi2 = Text("727",stroke_width=2).set_stroke(color=BLUE)
+        funi3 = Text("727",stroke_width=2).set_stroke(color=YELLOW)
+        funi4 = Text("727",stroke_width=2).set_stroke(color=GREEN)
+        funi5 = Text("727",stroke_width=2).set_stroke(color=PINK)
+        haha = Text("I have achieved comedy").scale(0.5).shift(DOWN)
+
+        self.add(funi1,haha)
+        self.wait(0.1)
+        funi1.become(funi2)
+        self.wait(0.1)
+        funi1.become(funi3)
+        self.wait(0.1)
+        funi1.become(funi4)
+        self.wait(0.1)
+        funi1.become(funi5)
+        self.wait(0.1)

@@ -1,6 +1,8 @@
 from manim import *
 from manim.utils.rate_functions import ease_in_out_expo, ease_in_out_quint
 import numpy as np
+import functools as functools
+import math
 
 class SinAndCosFunctionPlot(GraphScene):
     def __init__(self, **kwargs):
@@ -203,3 +205,85 @@ class SinArea(GraphScene):
         self.play(Create(line1),Create(line2))
         self.play(Write(area1))
         self.play(x_end.animate.increment_value(PI),run_time=3)
+
+class TaylorSeries(GraphScene):
+    def __init__(self,**kwargs):
+        GraphScene.__init__(
+            self,
+            x_min = -4*PI,
+            x_max=4*PI,
+            y_min=-3,
+            y_max=3,
+            graph_origin=ORIGIN,
+            **kwargs
+        )
+
+    def construct(self):
+        #Basic Setup
+        self.setup_axes(animate=True)
+        x_t = ValueTracker(0)
+        x_equals = MathTex("x = ").shift(3*DOWN+2*RIGHT)
+        x_num = DecimalNumber(x_t.get_value(),num_decimal_places=2).next_to(x_equals,RIGHT)
+        n = ValueTracker(1)
+        n_equals = MathTex("n = ").next_to(x_equals,DOWN)
+        n_num = Integer(n.get_value()).next_to(n_equals,RIGHT)
+        cos_func = np.cos
+        cos_graph = self.get_graph(cos_func,x_min=-4*PI,x_max=4*PI)
+        dot = Dot(self.coords_to_point(x_t.get_value(),np.cos(x_t.get_value())),radius=0.5)
+        def taylor_at_x(k,a,x):
+            value = 0
+            for i in range(k+1):
+                #value += ((x**(2*i)*(-1)**i)/math.factorial(2*i))
+                value += ((x-a)**i*np.cos(a+i*PI/2))/math.factorial(i)
+            return value
+        taylor1 = self.get_graph(lambda x : taylor_at_x(1,x_t.get_value(),x),color=YELLOW)
+        taylor2 = self.get_graph(lambda x : taylor_at_x(2,x_t.get_value(),x),color=YELLOW)
+        taylor3 = self.get_graph(lambda x : taylor_at_x(3,x_t.get_value(),x),color=YELLOW)
+        taylor4 = self.get_graph(lambda x : taylor_at_x(4,x_t.get_value(),x),color=YELLOW)
+        taylor5 = self.get_graph(lambda x : taylor_at_x(5,x_t.get_value(),x),color=YELLOW)
+        taylor6 = self.get_graph(lambda x : taylor_at_x(6,x_t.get_value(),x),color=YELLOW)
+
+        #Updaters
+        taylor1.add_updater(
+            lambda x : x.become(
+                self.get_graph(lambda x : taylor_at_x(int(n.get_value()),x_t.get_value(),x),color=YELLOW)
+            )
+        )
+        dot.add_updater(
+            lambda x : x.become(
+                Dot(self.coords_to_point(x_t.get_value(),np.cos(x_t.get_value())))
+            ) 
+        )
+        x_num.add_updater(
+            lambda x : x.become(
+                DecimalNumber(x_t.get_value(),num_decimal_places=2).next_to(x_equals,RIGHT)
+            )
+        )
+        n_num.add_updater(
+            lambda x : x.become(
+                Integer(n.get_value()).next_to(n_equals,RIGHT)
+            )
+        )
+
+        #Animating
+        self.play(Create(cos_graph))
+        self.play(Write(taylor1),Create(dot),Write(x_equals),Write(x_num),Write(n_num),Write(n_equals))
+        self.wait()
+        self.play(Transform(taylor1,taylor2),n.animate.increment_value(1))
+        self.wait()
+        self.play(Transform(taylor1,taylor3),n.animate.increment_value(1))
+        self.wait()
+        self.play(Transform(taylor1,taylor4),n.animate.increment_value(1))
+        self.wait()
+        self.play(Transform(taylor1,taylor5),n.animate.increment_value(1))
+        self.wait()
+        self.play(Transform(taylor1,taylor6),n.animate.increment_value(1))
+        self.wait()
+        
+        self.play(x_t.animate.set_value(5.5),run_time=10,rate_func=rate_functions.ease_in_out_quint)
+        self.play(x_t.animate.set_value(-3.5),run_time=10,rate_func=rate_functions.ease_in_out_quint)
+        self.play(x_t.animate.set_value(3.14),run_time=10,rate_func=rate_functions.ease_in_out_quint)
+        self.wait()
+
+
+        

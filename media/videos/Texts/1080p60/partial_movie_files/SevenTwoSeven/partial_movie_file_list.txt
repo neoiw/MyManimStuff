@@ -1,0 +1,6 @@
+# This file is used internally by FFMPEG.
+file 'file:/home/neo/Desktop/School/Manim/media/videos/Texts/1080p60/partial_movie_files/SevenTwoSeven/450974505_3628435177_3214821325.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/Texts/1080p60/partial_movie_files/SevenTwoSeven/2788726626_3628435177_1030350608.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/Texts/1080p60/partial_movie_files/SevenTwoSeven/2788726626_3628435177_1629905916.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/Texts/1080p60/partial_movie_files/SevenTwoSeven/2788726626_3628435177_3998615480.mp4'
+file 'file:/home/neo/Desktop/School/Manim/media/videos/Texts/1080p60/partial_movie_files/SevenTwoSeven/2788726626_3628435177_2459878910.mp4'
