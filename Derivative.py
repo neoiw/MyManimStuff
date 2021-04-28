@@ -15,27 +15,31 @@ class Derivative(GraphScene):
     def construct(self):
         self.setup_axes(animate=True)
         func = lambda x : 0.1 * (x - 2) * (x - 8) * (x - 5) + 3
-        func_graph = self.get_graph(func,x_min=0.8,x_max=9)
-        x_start = 3
+        func_graph = self.get_graph(func,x_min=-1,x_max=9)
+        x_start = ValueTracker(3)
         x_end = ValueTracker(7)
-        dot_start = Dot(self.coords_to_point(x_start,func(x_start)))
+
+        dot_start = Dot(self.coords_to_point(x_start.get_value(),func(x_start.get_value())))
         dot_end = Dot(self.coords_to_point(x_end.get_value(),func(x_end.get_value())))
         
         def dot_updater(dot):
             x = x_end.get_value()
             dot.move_to(self.coords_to_point(x,func(x)))
+        def deriv_func(a,x):
+            line = 0.3 * x * (a**2-10*a+22) - 0.2 * (a**3-7.5*a**2+25)
+            return line
 
         dot_end.add_updater(dot_updater)
         
-        line = Line(dot_start.get_center(),dot_end.get_center(),color=BLACK)
+        line = Line(dot_start.get_center(),dot_end.get_center(),color=YELLOW).scale(3)
         line_new = Line(ORIGIN,line.get_unit_vector()).scale(5).move_to(self.coords_to_point(x_end.get_value(),func(x_end.get_value())))
-        line_another = TangentLine(func_graph,<This part>,length=5)
+        line_another = self.get_graph(lambda x : deriv_func(x_start.get_value(),x),color=YELLOW)
         
         line.add_updater(
             lambda x : x.become(
                 Line(
-                    dot_start.get_center(),dot_end.get_center(),color=BLACK
-                )
+                    dot_start.get_center(),dot_end.get_center(),color=YELLOW
+                ).scale(3)
             )
         )
         line_new.add_updater(lambda x : x.become(
@@ -47,22 +51,8 @@ class Derivative(GraphScene):
 
         self.play(Create(func_graph))
         self.wait()
-        self.play(*list(map(GrowFromCenter,[dot_start,dot_end])))
+        self.play(*list(map(GrowFromCenter,[dot_start,dot_end])),Write(line))
         self.wait()
         #self.play(Create(line_new))
-        self.add(line_another)
+        self.play(x_end.animate.set_value(3),ReplacementTransform(line,line_another))
         self.wait()
-
-class Teset(Scene):
-    def construct(self):
-        x = ValueTracker(0)
-        line = Line(RIGHT+UP,RIGHT+DOWN).rotate(x.get_value())
-        line.add_updater(lambda v : v.become(Line(RIGHT+UP,RIGHT+DOWN).rotate(x.get_value())))
-        line_new = Line(UP,line.get_unit_vector())
-        line_new.add_updater(lambda v : v.become(Line(UP,line.get_unit_vector())))
-        self.add(line_new,line.shift(UP+RIGHT))
-        self.play(x.animate.increment_value(10),rate_func=linear,run_time=20)
-        self.wait()
-
-        np = NumberPlane()
-        
