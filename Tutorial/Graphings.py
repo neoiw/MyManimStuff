@@ -285,5 +285,17 @@ class TaylorSeries(GraphScene):
         self.play(x_t.animate.set_value(3.14),run_time=10,rate_func=rate_functions.ease_in_out_quint)
         self.wait()
 
-
-        
+class SingleQuadAxis(GraphScene):
+    def __init__(self,**kwargs):
+        GraphScene.__init__(
+            self,
+            x_min=0,
+            x_max=5,
+            y_min=0,
+            y_max=20,
+            **kwargs
+        )
+    def construct(self):
+        self.setup_axes()
+        graph = self.get_graph(lambda x : x**2)
+        self.add(graph)
