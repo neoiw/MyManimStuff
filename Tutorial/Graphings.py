@@ -299,3 +299,25 @@ class SingleQuadAxis(GraphScene):
         self.setup_axes()
         graph = self.get_graph(lambda x : x**2)
         self.add(graph)
+
+class ZeroSixZero(Scene):
+    def construct(self):
+        axes = Axes(x_range=[-3*PI,3*PI],y_range=[-1.5,1.5])
+        self.add(axes)
+
+class GetDerivGraph(GraphScene):
+    def __init__(self,**kwargs):
+        GraphScene.__init__(
+            self,
+            x_min=-1,
+            x_max=3,
+            y_min=0,
+            y_max=3,
+            **kwargs
+        )
+
+    def construct(self):
+        self.setup_axes()
+        graf = self.get_graph(lambda x : x**2)
+        deriv = self.get_derivative_graph(graf,dx=0.1)
+        self.play(Create(graf),Write(deriv))
