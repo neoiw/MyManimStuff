@@ -61,6 +61,7 @@ class IntBySub(Scene):
         equation2 = MathTex("=\\int \\frac{1}{u}\\frac{4-u^3}{u^8}\\mathrm{d}u")
         equation2[0][4].set_color(BLUE)
         equation2[0][7].set_color(BLUE)
+        equation2[0][10].set_color(BLUE)
 
         equation3 = MathTex("=\\int 4u^{-9}\\mathrm{d}u - \\int u^{-6}\\mathrm{d}u")
         equation3[0][3].set_color(BLUE)
@@ -105,6 +106,8 @@ class IntBySub(Scene):
         self.play(Write(equation))
         self.play(ReplacementTransform(equation,equation1))
         self.wait()
+        self.play(equation1.copy().animate.shift(3*DOWN+2*LEFT))
+        self.wait()
         self.play(FadeIn(ex_is_u))
         self.wait()
         self.play(FadeIn(rightarrow.next_to(ex_is_u)))
@@ -123,5 +126,7 @@ class IntBySub(Scene):
         self.play(Write(equation4.next_to(equation3)))
         self.wait()
         self.play(ReplacementTransform(equation4,equation5))
+        self.wait()
+        self.play(equation5.copy().animate.shift(3*DOWN+2*RIGHT))
         self.wait()
         
