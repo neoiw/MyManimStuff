@@ -1,7 +1,6 @@
 from manim import *
 from manim.utils.rate_functions import ease_in_out_expo, ease_in_out_quint
 import numpy as np
-import functools as functools
 import math
 
 class SinAndCosFunctionPlot(GraphScene):
